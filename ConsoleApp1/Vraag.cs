@@ -6,22 +6,20 @@ namespace ConsoleApp1
 {
     class Question
     {
-        //vraag en antwoord. question moet beide vraag en antwoord bevatten.
+        //object Question heeft de volgende parameters.
         private string Vraag { get; set;}
         private string Antwoord { get; set; }
         private string Categorie { get; set; }
-        private Enum MoeilijkheidsGraad { get; set; }
-        private Enum MoelijkheidsGraad { 1,2,3}
+        private int MoeilijkheidsGraad { get; set; }
 
-
-        public Question(string V, string A, string C, Enum MG)
+        public Question(string V, string A, string C, int MG)
         {
             Vraag = V;
             Antwoord = A;
             Categorie = C;
-            moeilijkheidsGraad = MG;
+            MoeilijkheidsGraad = MG;
         }
-
+        
 
         
     }
