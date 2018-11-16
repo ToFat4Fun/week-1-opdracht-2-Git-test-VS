@@ -3,24 +3,60 @@
 //17079543 week 1 opdracht 2
 namespace ConsoleApp1
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-
             Quiz Q = new Quiz();
-            Question vraag1 = new Question("Wie is de president van de USA?", "Donald J. Trump", "Algemeen", 1);
-            Question vraag2 = new Question("Wat betekent de volgende code:  string naam = @ " + "hello world ",
-                "de @ zorgt ervoor dat er niet meerdere lines nodig zijn. handig om ascii art in op te slaan!", "programming", 2);
-            Question vraag3 = new Question("wat is 2+2=4-1", "quick maths!", "media", 3);
+            Question vraag1 = new Question()
+            {
+                Vraag = "1Wie is president van de USA?",
+                Antwoord = "Donald J. Trump",
+                Categorie = "open vraag",
+                MoeilijkheidsGraad = 1
+            };
+
+            Question vraag2 = new Question()
+            {
+                Vraag = "2Met wie kan Nero Claudius goed omgaan in FG/O?",
+                Antwoord = "Vlad the Impaler",
+                Categorie = "open vraag",
+                MoeilijkheidsGraad = 2
+            };
+
+            Question vraag3 = new Question()
+            {
+                Vraag = "3Hoeveel SQ kost een 10 roll?",
+                Antwoord = "30",
+                Categorie = "open vraag",
+                MoeilijkheidsGraad = 3
+            };
+
+            ChoiceQuestion vraag4 = new ChoiceQuestion()
+            {
+                Vraag = "1 multi: Wat is de default acces modifier in C#?",
+                Categorie = "multiple choice",
+                MoeilijkheidsGraad = 1
+            };
+            vraag4.addAntwoord("private", false);
+            vraag4.addAntwoord("internal", true);
+            vraag4.addAntwoord("protected", false);
+
             Q.addVraag(vraag1);
             Q.addVraag(vraag2);
             Q.addVraag(vraag3);
-            
+            Q.addVraag(vraag4);
 
-
+            Console.ForegroundColor = ConsoleColor.Green;
+            //begin user interactie. 
             Console.WriteLine(Q.message());
+            string keuzeVragen = Console.ReadLine();
+            int keuze = int.Parse(keuzeVragen);
+            Q.kiesVraag(keuze); //gaat de juiste vragen filteren en geven.
+
+
+
+
             Console.ReadKey();
         }
     }
