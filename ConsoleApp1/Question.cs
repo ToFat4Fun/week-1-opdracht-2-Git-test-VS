@@ -11,7 +11,7 @@
 
         public Question(){}
 
-        public void geefVraag()
+        public virtual void geefVraag()
         {
             System.Console.WriteLine(Vraag);
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -20,18 +21,18 @@ namespace ConsoleApp1
             if (goed)
             {
                 Antwoord = an;
-                System.Console.WriteLine("goed geantwoord!");
             }
         }
 
         //geeft de vraag + lijst van mogelijke antwoorden
         public void geefVraag()
         {
-            System.Console.WriteLine(Vraag);
+            base.geefVraag();
+            //System.Console.WriteLine(Vraag);
+            System.Console.WriteLine("Kies uit een van de volgende antwoorden");
             foreach(string a in antwoorden) {
-                System.Console.WriteLine(a.ToString());
+                Console.WriteLine(" {0}", a);
             }
         }
-
     }
 }

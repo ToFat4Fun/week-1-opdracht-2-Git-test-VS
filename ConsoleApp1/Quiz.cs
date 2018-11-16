@@ -71,7 +71,8 @@ namespace ConsoleApp1
                     sorteerCategorie();
                     break;
                 case 0:
-                    Console.ReadKey(true);
+                    //Console.ReadKey(true);
+                    Environment.Exit(42069);
                     break;
 
                 default:
@@ -80,16 +81,18 @@ namespace ConsoleApp1
             }
         }
 
+        //weergeeft de vraag aabn de gebruiker.
         public void presentQuestion(Question q)
         {
             q.geefVraag();
             Console.WriteLine("antwoord: ");
             string response = Console.ReadLine();
             Console.WriteLine(q.checkAnswer(response));
-            Console.WriteLine("volgende vraag? druk op een toets");
+            Console.WriteLine("volgende vraag? druk op een toets. als er geen vragen meer zijn wordt de applicatie afgesloten.");
             Console.ReadKey(true);
         }
 
+        //de volgende methoden zijn verantwoordelijk voor het naar boven halen v.d juiste vragen.
         public void makkelijkeVraag()
         {
             List<Question> result = (from Question q in vragenLijst

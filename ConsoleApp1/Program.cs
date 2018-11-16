@@ -7,6 +7,8 @@ namespace ConsoleApp1
     {
         private static void Main(string[] args)
         {
+            //maak een Quiz aan met vragen volgens de opdracht.
+            //Gebruik C# initializers om de vragen te vullen bij de opstart van het programma.
             Quiz Q = new Quiz();
             Question vraag1 = new Question()
             {
@@ -46,13 +48,13 @@ namespace ConsoleApp1
             Q.addVraag(vraag2);
             Q.addVraag(vraag3);
             Q.addVraag(vraag4);
-
             Console.ForegroundColor = ConsoleColor.Green;
             //begin user interactie. 
             Console.WriteLine(Q.message());
             string keuzeVragen = Console.ReadLine();
             int keuze = int.Parse(keuzeVragen);
             Q.kiesVraag(keuze); //gaat de juiste vragen filteren en geven.
+
 
 
 
