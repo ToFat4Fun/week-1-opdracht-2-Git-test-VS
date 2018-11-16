@@ -6,15 +6,15 @@ namespace ConsoleApp1
 {
     internal class Quiz
     {
-        private List<Question> vragenLijst;
+        private List<IQuestionable> vragenLijst;
 
         public Quiz()
         {
-            vragenLijst = new List<Question>();
+            vragenLijst = new List<IQuestionable>();
         }
 
         //voegt vraag toe aan vragenLijst.
-        public void addVraag(Question Q)
+        public void addVraag(IQuestionable Q)
         {
             vragenLijst.Add(Q);
         }
@@ -82,7 +82,7 @@ namespace ConsoleApp1
         }
 
         //weergeeft de vraag aabn de gebruiker.
-        public void presentQuestion(Question q)
+        public void presentQuestion(IQuestionable q)
         {
             q.geefVraag();
             Console.WriteLine("antwoord: ");
@@ -95,10 +95,10 @@ namespace ConsoleApp1
         //de volgende methoden zijn verantwoordelijk voor het naar boven halen v.d juiste vragen.
         public void makkelijkeVraag()
         {
-            List<Question> result = (from Question q in vragenLijst
+            List<IQuestionable> result = (from IQuestionable q in vragenLijst
                          where q.MoeilijkheidsGraad.Equals(1)
                          select q).ToList();
-            foreach(Question q in result)
+            foreach(IQuestionable q in result)
             {
                 presentQuestion(q);
             }
@@ -106,10 +106,10 @@ namespace ConsoleApp1
 
         public void gemiddeldeVraag()
         {
-            List<Question> result = (from Question q in vragenLijst
+            List<IQuestionable> result = (from IQuestionable q in vragenLijst
                          where q.MoeilijkheidsGraad.Equals(2)
                          select q).ToList();
-            foreach (Question q in result)
+            foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
@@ -117,10 +117,10 @@ namespace ConsoleApp1
 
         public void moeilijkeVraag()
         {
-            List<Question> result = (from Question q in vragenLijst
+            List<IQuestionable> result = (from IQuestionable q in vragenLijst
                          where q.MoeilijkheidsGraad.Equals(3)
                          select q).ToList();
-            foreach (Question q in result)
+            foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
@@ -128,20 +128,20 @@ namespace ConsoleApp1
         }
         public void sorteerMoeilijkheidsGraad()
         {
-            List<Question> result = (from Question q in vragenLijst
+            List<IQuestionable> result = (from IQuestionable q in vragenLijst
                          orderby q.MoeilijkheidsGraad
                          select q).ToList();
-            foreach (Question q in result)
+            foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
         }
         public void sorteerCategorie()
         {
-            List<Question> result = (from Question q in vragenLijst
+            List<IQuestionable> result = (from IQuestionable q in vragenLijst
                          orderby q.Categorie
                          select q).ToList();
-            foreach (Question q in result)
+            foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
