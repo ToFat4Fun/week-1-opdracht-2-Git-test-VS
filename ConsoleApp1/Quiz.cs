@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsoleApp1
+namespace Week1Opdracht2Quiz
 {
     internal class Quiz
     {
@@ -70,6 +70,7 @@ namespace ConsoleApp1
                     Console.WriteLine("U heeft gekozen voor sorteren op categorie");
                     sorteerCategorie();
                     break;
+
                 case 0:
                     //Console.ReadKey(true);
                     Environment.Exit(42069);
@@ -96,9 +97,9 @@ namespace ConsoleApp1
         public void makkelijkeVraag()
         {
             List<IQuestionable> result = (from IQuestionable q in vragenLijst
-                         where q.MoeilijkheidsGraad.Equals(1)
-                         select q).ToList();
-            foreach(IQuestionable q in result)
+                                          where q.MoeilijkheidsGraad.Equals(1)
+                                          select q).ToList();
+            foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
@@ -107,8 +108,8 @@ namespace ConsoleApp1
         public void gemiddeldeVraag()
         {
             List<IQuestionable> result = (from IQuestionable q in vragenLijst
-                         where q.MoeilijkheidsGraad.Equals(2)
-                         select q).ToList();
+                                          where q.MoeilijkheidsGraad.Equals(2)
+                                          select q).ToList();
             foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
@@ -118,29 +119,30 @@ namespace ConsoleApp1
         public void moeilijkeVraag()
         {
             List<IQuestionable> result = (from IQuestionable q in vragenLijst
-                         where q.MoeilijkheidsGraad.Equals(3)
-                         select q).ToList();
+                                          where q.MoeilijkheidsGraad.Equals(3)
+                                          select q).ToList();
             foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
-
         }
+
         public void sorteerMoeilijkheidsGraad()
         {
             List<IQuestionable> result = (from IQuestionable q in vragenLijst
-                         orderby q.MoeilijkheidsGraad
-                         select q).ToList();
+                                          orderby q.MoeilijkheidsGraad
+                                          select q).ToList();
             foreach (IQuestionable q in result)
             {
                 presentQuestion(q);
             }
         }
+
         public void sorteerCategorie()
         {
             List<IQuestionable> result = (from IQuestionable q in vragenLijst
-                         orderby q.Categorie
-                         select q).ToList();
+                                          orderby q.Categorie
+                                          select q).ToList();
             foreach (IQuestionable q in result)
             {
                 presentQuestion(q);

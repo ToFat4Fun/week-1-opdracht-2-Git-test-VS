@@ -1,7 +1,7 @@
 ﻿using System;
 
 //17079543 week 1 opdracht 2
-namespace ConsoleApp1
+namespace Week1Opdracht2Quiz
 {
     internal class Program
     {
@@ -49,15 +49,11 @@ namespace ConsoleApp1
             Q.addVraag(vraag3);
             Q.addVraag(vraag4);
             Console.ForegroundColor = ConsoleColor.Green;
-            //begin user interactie. 
+            //begin user interactie.
             Console.WriteLine(Q.message());
             string keuzeVragen = Console.ReadLine();
             int keuze = int.Parse(keuzeVragen);
             Q.kiesVraag(keuze); //gaat de juiste vragen filteren en geven.
-
-
-
-
 
             Console.ReadKey();
         }

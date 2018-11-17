@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp1
+namespace Week1Opdracht2Quiz
 {
-    public class ChoiceQuestion  : IQuestionable
+    public class ChoiceQuestion : IQuestionable
     {
         //object ChoiceQuestion heeft de volgende attributen.
         public string Vraag { get; set; }
+
         public string Antwoord { get; set; }
         public string Categorie { get; set; }
         public int MoeilijkheidsGraad { get; set; }
@@ -39,7 +40,8 @@ namespace ConsoleApp1
         {
             System.Console.WriteLine(Vraag);
             System.Console.WriteLine("Kies uit een van de volgende antwoorden");
-            foreach(string a in antwoorden) {
+            foreach (string a in antwoorden)
+            {
                 Console.WriteLine(" {0}", a);
             }
         }

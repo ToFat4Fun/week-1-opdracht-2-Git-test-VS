@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-//omdat naamgeving xD
-namespace ConsoleApp1
+﻿//omdat naamgeving xD
+namespace Week1Opdracht2Quiz
 {
-    interface IQuestionable
+    internal interface IQuestionable
     {
         string Vraag { get; set; }
         string Antwoord { get; set; }
         string Categorie { get; set; }
         int MoeilijkheidsGraad { get; set; }
+
         void geefVraag();
+
         bool checkAnswer(string input);
     }
 }

@@ -1,14 +1,17 @@
-﻿namespace ConsoleApp1
+﻿namespace Week1Opdracht2Quiz
 {
     public class Question : IQuestionable
     {
         //object Question heeft de volgende attributen.
         public string Vraag { get; set; }
+
         public string Antwoord { get; set; }
         public string Categorie { get; set; }
         public int MoeilijkheidsGraad { get; set; }
 
-        public Question(){}
+        public Question()
+        {
+        }
 
         public void geefVraag()
         {
